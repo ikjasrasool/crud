@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Data</title>
+</head>
+<body>
+<h1>Insert Data</h1>
+
+<form action="/up" method="post">
+    <input type="hidden" name="id" value="<%= results._id %>">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= results.name %>">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="<%= results.email %>">
+
+    <button type="submit">Submit</button>
+</form>
+
+<h1>Generate Report</h1>
+<a href="/display">Generate Report</a>
+</body>
+</html>

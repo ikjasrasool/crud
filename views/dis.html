@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+
+    <table class='table table-striped'>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% results.forEach(item => { %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.email %></td>
+                <td>
+                    <form action="/del" method="POST">
+                        <input type="hidden" name="id" value="<%= item._id %>">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <form action="/update" method="POST">
+                        <input type="hidden" name="id" value="<%= item._id %>">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </td>
+            </tr>
+
+        <% }) %>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
